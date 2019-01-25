@@ -2,7 +2,7 @@
 2 classes that allow to cast a json to any provided generic type.
 
 Usage example in Test and TestObjects class.
-All the reusable code in JsonParser and JsonReader.
+All code in JsonParser and JsonReader.
 
 Supported types :
   - Int
