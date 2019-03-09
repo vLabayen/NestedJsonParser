@@ -30,6 +30,7 @@ public class NestedObject {
 }  
 
 And given a json string like :  
+
 {"test_arr":[{  
 &nbsp;&nbsp;&nbsp;&nbsp;nested:{  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nested_arr:[  
@@ -44,7 +45,7 @@ And given a json string like :
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}  
 &nbsp;&nbsp;&nbsp;&nbsp;}  
-},{    
+},{  
 &nbsp;&nbsp;&nbsp;&nbsp;nested:{  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nested_arr:[  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{name:vic,id:0},  
@@ -61,6 +62,6 @@ And given a json string like :
 }]}"  
 
 We can parse it to a TestObject7 instance like :  
-TestObject7 obj = JsonParser.FromJson<TestObject7>(jsonString);
+`TestObject7 obj = JsonParser.FromJson<TestObject7>(jsonString);`
 
 More examples can be found in the test class. They are Unity dependent to run, but they can easily parsed to a console application also
