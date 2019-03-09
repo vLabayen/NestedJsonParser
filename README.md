@@ -11,14 +11,15 @@ One usage example (extracted from the tests) :
 
 Given the following structure :
 
-public class TestObject7{  
-&nbsp;&nbsp;&nbsp;&nbsp;public TestObject6[] test_arr { get; set; }  
-}  
-public class TestObject6{  
-&nbsp;&nbsp;&nbsp;&nbsp;public NestedObject2 nested { get; set; }  
-}  
-public class NestedObject2 {  
-&nbsp;&nbsp;&nbsp;&nbsp;public NestedObject[] nested_arr { get; set; }  
+
+`public class TestObject7{`  
+&nbsp;&nbsp;&nbsp;&nbsp;`public TestObject6[] test_arr { get; set; }  `  
+`}`
+`public class TestObject6{`  
+&nbsp;&nbsp;&nbsp;&nbsp;`public NestedObject2 nested { get; set; }`  
+`}`  
+`public class NestedObject2 {`  
+&nbsp;&nbsp;&nbsp;&nbsp;`public NestedObject[] nested_arr { get; set; }`  
 &nbsp;&nbsp;&nbsp;&nbsp;public TestObject5 nested_test { get; set; }  
 }  
 public class TestObject5{  
