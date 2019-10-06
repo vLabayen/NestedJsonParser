@@ -3,8 +3,11 @@
 //https://stackoverflow.com/questions/51934180/vb-net-instantiate-a-nested-property-by-reflection/51952086#51952086
 //https://stackoverflow.com/questions/9783191/setting-value-in-an-array-via-reflection
 using System;
+using System.Text;
 using System.Reflection;
+using System.Globalization;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class JsonParser{
 
@@ -16,6 +19,16 @@ public class JsonParser{
       JsonParser.FillObject(ref target, reader.properties);
 
       return (T)target;
+    }
+
+    public static string ToJson<T>(T obj) where T : class {
+      //Set float decimal separator to . to avoid problems
+      //[12.2f, 2f, 3f] ---> [12.2, 2, 3] instead of [12,2, 2, 3]
+      System.Globalization.CultureInfo customCulture = (System.Globalization.CultureInfo)System.Threading.Thread.CurrentThread.CurrentCulture.Clone();
+      customCulture.NumberFormat.NumberDecimalSeparator = ".";
+      System.Threading.Thread.CurrentThread.CurrentCulture = customCulture;
+
+      return JsonWriter.WriteJson(obj);
     }
 
     private static void FillObject(ref object target, List<JsonProperty> properties){

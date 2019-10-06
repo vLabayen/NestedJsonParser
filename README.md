@@ -1,9 +1,9 @@
 # NestedJsonParser
-2 classes that allow to cast a json to any provided generic type.  
-The parser and the reader are not Unity dependent while the tests are.  
-The parser is implemented using reflection. Both are recusive approaches.  
+3 classes that allow to cast a json to any provided generic type and to obtain the json of a class
+The parser, reader and writter are not Unity dependent.
+The classes are implemented using reflection and recusive approaches.  
 
-To import it, just download JsonReader & JsonParser to your proyect folder  
+To import them, just download JsonParser, JsonReader & JsonWriter to your proyect folder  
 Usage example in Test and TestObjects class.  
 
 
@@ -68,5 +68,8 @@ And given a json string like :
 
 We can parse it to a TestObject7 instance like :  
 `TestObject7 obj = JsonParser.FromJson<TestObject7>(jsonString);`
+
+From the object we can obtain its json with :  
+`string json = JsonParser.ToJson<TestObject7>(obj);`
 
 More examples can be found in the test class. They are Unity dependent to run, but they can also be easily parsed to a console application.
